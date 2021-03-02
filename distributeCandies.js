@@ -22,21 +22,19 @@
 // -105 <= candyType[i] <= 105
 */
 function distributeCandies(array){
-  let numCandy = array.length
-  let candyLimit = Math.floor(numCandy/2)
-  let uniqueCandies = new Set(array)
-  let uniqueCandyCount = 0
-  uniqueCandies.forEach(candy => {
-    return uniqueCandyCount +=1
-  });
-  
-  if (candyLimit <= uniqueCandyCount){
-    console.log(`You can have ${candyLimit} candies because your limit is less than the amount of candy types`)
-    return candyLimit
-  }
-  else {
-    console.log(`You can have ${uniqueCandyCount} candies because your limit is more than the amount of candy types`)
-    return uniqueCandies
-  }
-  }
-  distributeCandies(array)
+  let numCandy = array.length, candyLimit = Math.floor(numCandy/2), uniqueCandies = new Set(array), uniqueCandyCount = 0;
+  if (numCandy >= 2 && numCandy % 2 === 0){
+    uniqueCandies.forEach(candy => {
+      return uniqueCandyCount +=1
+    });
+    return (candyLimit <= uniqueCandyCount)
+      ? candyLimit
+      : uniqueCandies
+    }
+  return "incorrect input or odd numbered array"
+}
+  console.log(distributeCandies([2,3,4,5,3,4,7]))
+  console.log(distributeCandies([1,1,1,5,3,4,7,9]))
+  console.log(distributeCandies([2,3,4,5,3,9,9,10,11,12,18,7]))
+  console.log(distributeCandies([2,3,4,5,6,4]))
+  console.log(distributeCandies([2,3,4,5,3,4,7,10,11,12,13,14,14,15,15,15,20,22]))
