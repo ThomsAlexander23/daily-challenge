@@ -15,3 +15,22 @@
 // 1 <= nums[i] <= 104
 
 "use strict"
+
+// function to complete exercise
+function errorsInArray(array){
+  let found = []
+  let index = 0;
+  for (let i = 0; i < array.length; i++){
+    index = array[i]
+    for (let j = i+1; j < array.length; j++){
+      if (index === array[j]){
+        found.push(index)
+        found.push(index+1)
+      }
+    }
+  }    
+  return found
+}
+//let array = [2,3,4,5,6,6,8,9]
+//errorsInArray(array)
+errorsInArray([2,3,4,5,6,6,8,9])
