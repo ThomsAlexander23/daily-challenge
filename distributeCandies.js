@@ -17,9 +17,9 @@
  
 // Constraints:
 // n == candyType.length
-// 2 <= n <= 104
+// 2 <= n
 // n is even.
-// -105 <= candyType[i] <= 105
+// candyType[i] <= 105
 */
 function distributeCandies(array){
   let numCandy = array.length, candyLimit = Math.floor(numCandy/2), uniqueCandies = new Set(array), uniqueCandyCount = 0;
