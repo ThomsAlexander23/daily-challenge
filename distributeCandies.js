@@ -21,6 +21,9 @@
 // n is even.
 // candyType[i] <= 105
 */
+
+"use strict"
+
 function distributeCandies(array){
   let numCandy = array.length, candyLimit = Math.floor(numCandy/2), uniqueCandies = new Set(array), uniqueCandyCount = 0;
   if (numCandy >= 2 && numCandy % 2 === 0){
