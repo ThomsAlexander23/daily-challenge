@@ -16,4 +16,17 @@
  
 // Constraints:
 // num consists only of digits '0'-'9'.
-// 1 <= num.length <= 35
+// 3 <= num.length <= 35
+
+
+// functions to check correct input type
+// function for type string containing only numbers
+function numString(string){
+  if ((string === "string") && (parseFloat(string) == string) && (3 <= string.length <= 35)){
+    return true
+  }
+  return false
+}
+
+
+
