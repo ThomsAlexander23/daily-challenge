@@ -21,3 +21,17 @@
   Version: 03072021
 */
 
+function positiveNumOnly(input){
+  let numCheck = typeof(input) === "number"
+  let posCheck = input >= 0
+  return (numCheck && posCheck)
+}
+
+function isPrime(num){
+  if (!positiveNumOnly(num) || num <= 1){
+    return false
+  }
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+    if (num % i === 0) return false
+  return true
+}
