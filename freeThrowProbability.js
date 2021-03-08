@@ -14,12 +14,20 @@
     Author: Alex
     Version: 03082021
 */
+function checkType(string, number){
+  let percentSignCheck = string.includes("%")
+  if (typeof(string) !== "string" || (percentSignCheck != true) || (typeof(number) !== "number") ){
+    return false
+  }
+  return true
+}
 
 function freeThrows(percentage, basketsMade){
-  percentage = parseInt(percentage)
-  let probabitlity = percentage/100
-  let chance = probabitlity**basketsMade
-  chance = chance * 100
-  return `${Math.round(chance)}%`
+  if (checkType(percentage, basketsMade) !== true){
+    return false
+  }
+  percentage = parseInt(percentage)/100
+  let probability = (percentage**basketsMade) * 100
+  return `${Math.round(probability)}%`
 }
 
